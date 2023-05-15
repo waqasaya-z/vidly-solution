@@ -39,7 +39,7 @@ app.post('/api/genre', (req, res) => {
 app.put("/api/genre/:id", (req,res) => {
  const updatedGenre = movieGenre.find(c => c.id ===  parseInt(req.params.id));
   if(!updatedGenre){
-  	res.send(400).send('Bad Request');
+  	res.status(400).send('Bad Request');
   	return;
   }
 
@@ -58,7 +58,7 @@ app.put("/api/genre/:id", (req,res) => {
 app.delete('/api/genre/:id', (req,res) => {
   const deleteGenre = movieGenre.find(c => c.id ===  parseInt(req.params.id));
   if(!deleteGenre){
-  	res.send(400).send('Bad Request');
+  	res.status(400).send('Bad Request');
   	return;
   }
 
